@@ -510,10 +510,16 @@ const Listing = (props) => {
         </div>
 
         <Cards
-          properties={properties}
-          handleToggle={handleToggle}
-          isInCompareList={isInCompareList}
-        />
+            properties={currentProperties.map((property) => ({
+              ...property,
+              propertyType: `${property.bhk} BHK,
+              ${property.propertyType},
+              ${"On Rent"} `,
+              ownerName: property.firstName,
+            }))}
+            handleToggle={handleToggle}
+            isInCompareList={isInCompareList}
+          />
         {/* </div> */}
       </section>
 
